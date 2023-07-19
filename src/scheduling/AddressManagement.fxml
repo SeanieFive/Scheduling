@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduling.AddressManagementController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0">
+         <children>
+            <Label layoutX="10.0" layoutY="10.0" text="Manage Addresses">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+      <TableView fx:id="addressTable" layoutX="46.0" layoutY="80.0" maxWidth="-Infinity" prefHeight="219.0" prefWidth="201.0">
+         <columns>
+            <TableColumn fx:id="addressNameColumn" minWidth="0.0" prefWidth="200.0" text="Current Addresses" />
+         </columns>
+      </TableView>
+      <GridPane hgap="10.0" layoutX="263.0" layoutY="80.0" prefHeight="219.0" prefWidth="291.0" vgap="10.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="89.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="182.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="addressIdField" disable="true" editable="false" promptText="Address ID" GridPane.columnIndex="1" />
+            <TextField fx:id="address1Field" promptText="Address Line 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="address2Field" promptText="Address Line 2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cityComboBox" prefHeight="25.0" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="postalCodeField" promptText="Postal Code" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="phoneNumberField" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Address ID:" />
+            <Label text="Address Line 1:" GridPane.rowIndex="1" />
+            <Label text="Address Line 2:" GridPane.rowIndex="2" />
+            <Label text="City:" GridPane.rowIndex="3" />
+            <Label text="Postal Code:" GridPane.rowIndex="4" />
+            <Label text="Phone Number:" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <HBox layoutX="177.0" layoutY="327.0" spacing="10.0">
+         <children>
+            <Button fx:id="addCustomerButton" layoutX="182.0" layoutY="318.0" mnemonicParsing="false" onAction="#addAddressSelected" prefHeight="25.0" prefWidth="94.0" text="Add Address" />
+            <Button fx:id="updateCustomerButton" layoutX="287.0" layoutY="318.0" mnemonicParsing="false" onAction="#updateAddressSelected" text="Update Addresss" />
+            <Button fx:id="deleteCustomerButton" layoutX="401.0" layoutY="318.0" mnemonicParsing="false" onAction="#deleteAddressSelected" text="Delete Address" />
+            <Button fx:id="backButton" layoutX="504.0" layoutY="318.0" mnemonicParsing="false" onAction="#backSelected" prefWidth="50.0" text="Back" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

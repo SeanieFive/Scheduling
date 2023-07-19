@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="326.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduling.ReportManagementController">
+   <children>
+      <VBox layoutX="20.0" layoutY="13.0">
+         <children>
+            <Label layoutX="47.0" layoutY="13.0" text="Report Management">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="20.0" layoutY="47.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="504.0" layoutY="31.0" spacing="5.0">
+         <children>
+            <RadioButton fx:id="monthlyAppointmentsButton" layoutX="54.0" layoutY="124.0" mnemonicParsing="false" text="Monthly Appointments">
+               <toggleGroup>
+                  <ToggleGroup fx:id="reportsToggle" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="userSchedulesButton" layoutX="54.0" layoutY="153.0" mnemonicParsing="false" text="Consultant Schedules" toggleGroup="$reportsToggle" />
+            <RadioButton fx:id="customerAppointmentsButton" layoutX="54.0" layoutY="170.0" mnemonicParsing="false" text="Customer Appointments" toggleGroup="$reportsToggle" />
+         </children>
+      </VBox>
+      <Button fx:id="generateReportButton" layoutX="672.0" layoutY="67.0" mnemonicParsing="false" onAction="#generateReportSelected" text="Generate Report" />
+      <TextArea fx:id="reportTextArea" layoutX="20.0" layoutY="112.0" prefHeight="168.0" prefWidth="758.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="backButton" layoutX="726.0" layoutY="288.0" mnemonicParsing="false" onAction="#backSelected" prefWidth="50.0" text="Back" />
+   </children>
+</AnchorPane>

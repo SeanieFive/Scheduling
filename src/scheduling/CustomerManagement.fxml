@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduling.CustomerManagementController">
+   <children>
+      <Pane layoutX="37.0" layoutY="24.0" prefHeight="254.0" prefWidth="523.0">
+         <children>
+            <Label layoutY="32.0" text="Manage Customers">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Separator layoutX="5.0" layoutY="71.0" prefHeight="11.0" prefWidth="516.0" />
+            <TableView fx:id="customerTable" layoutX="8.0" layoutY="103.0" maxWidth="-Infinity" prefHeight="99.0" prefWidth="204.0">
+               <columns>
+                  <TableColumn fx:id="customerName" maxWidth="198.0" minWidth="-1.0" prefWidth="198.0" resizable="false" text="Customers" />
+               </columns>
+            </TableView>
+            <Button fx:id="deleteCustomerButton" layoutX="57.0" layoutY="216.0" mnemonicParsing="false" onAction="#deleteCustomerSelected" text="Delete" />
+            <GridPane hgap="10.0" layoutX="225.0" layoutY="103.0" prefHeight="92.0" prefWidth="298.0" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="101.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="187.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="25.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="25.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="customerIdField" disable="true" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="56.0" promptText="ID" GridPane.columnIndex="1" />
+                  <TextField fx:id="customerNameField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="121.0" promptText="Customer Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="addressComboBox" prefHeight="25.0" prefWidth="147.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Customer Name:" GridPane.rowIndex="1" />
+                  <Label text="Address :" GridPane.rowIndex="2" />
+                  <Label text="Customer ID:" />
+               </children>
+            </GridPane>
+            <Button fx:id="updateCustomerButton" layoutX="336.0" layoutY="216.0" mnemonicParsing="false" onAction="#updateCustomerSelected" text="Update" />
+            <Button fx:id="addCustomerButton" layoutX="10.0" layoutY="216.0" mnemonicParsing="false" onAction="#addCustomerSelected" text="Add" />
+         </children>
+      </Pane>
+      <Pane layoutX="39.0" layoutY="295.0">
+         <children>
+            <TableView fx:id="appointmentTable" layoutX="4.0" layoutY="57.0" prefHeight="140.0" prefWidth="516.0">
+              <columns>
+                <TableColumn fx:id="appointmentTitle" prefWidth="166.0" text="Appointment Title" />
+                <TableColumn fx:id="appointmentStart" minWidth="0.0" prefWidth="183.0" text="Start" />
+                  <TableColumn fx:id="appointmentEnd" prefWidth="166.0" text="End" />
+              </columns>
+            </TableView>
+            <Separator layoutY="45.0" prefHeight="3.0" prefWidth="516.0" />
+            <Label layoutX="249.0" text="Customer Appointments">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Button fx:id="backButton" layoutX="458.0" layoutY="216.0" mnemonicParsing="false" onAction="#BackSelected" prefHeight="25.0" prefWidth="62.0" text="Back" />
+            <Button fx:id="ManageAppointmentsButton" layoutX="309.0" layoutY="216.0" mnemonicParsing="false" onAction="#manageAppointmentsSelected" text="Manage Appointments" />
+            <Button fx:id="manageAddressesButton" layoutX="182.0" layoutY="216.0" mnemonicParsing="false" onAction="#manageAddressesSelected" text="Manage Addresses" />
+            <RadioButton fx:id="monthlyRadioButton" layoutX="25.0" layoutY="24.0" mnemonicParsing="false" selected="true" text="Monthly">
+               <toggleGroup>
+                  <ToggleGroup fx:id="monthlyWeeklyToggle" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="weeklyRadioButton" layoutX="102.0" layoutY="24.0" mnemonicParsing="false" text="Weekly" toggleGroup="$monthlyWeeklyToggle" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
